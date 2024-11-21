@@ -7,15 +7,17 @@ from django.core.mail import send_mail
 
 
 def home(request):
-    return HttpResponse("HOME")
+    return render(request, "mail/home.html")
 
 
 def addNewMail(request):
-    return HttpResponse("NEW MAIL IN BLOCK")
+    return render(request, "mail/newMail.html")
+    # return HttpResponse("NEW MAIL IN BLOCK")
 
 
 def weeklyMail(request):
-    return HttpResponse("WEEKLY MAILS IN BLOCK")
+    return render(request, "mail/weeklyMail.html")
+    # return HttpResponse("WEEKLY MAILS IN BLOCK")
     # form = MailbodyForm()
 
     # loopMails = [
