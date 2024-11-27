@@ -6,7 +6,7 @@ from .models import User, EmailContent
 
 @admin.register(User)
 class MailAdmin(admin.ModelAdmin):
-    list_display = ("id", "email")
+    list_display = ("id", "email", "mail_body_field")
 
 
 @admin.register(EmailContent)

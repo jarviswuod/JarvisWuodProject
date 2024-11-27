@@ -7,6 +7,8 @@ class User(models.Model):
     first_name = models.CharField(("first_name"), max_length=254, null=True)
     last_name = models.CharField(("last_name"), max_length=254, null=True)
     email = models.EmailField(("email"), max_length=254, unique=True)
+    mail_body_field = models.TextField(
+        'mail_body_field', null=True, default="no message")
 
     def __str__(self):
         return self.email

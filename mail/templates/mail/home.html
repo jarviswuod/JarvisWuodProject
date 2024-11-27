@@ -5,7 +5,10 @@
 <div></div>
 
 {% block body %}
-<p>Welcome to Jarvis Wuod website</p>
-<a href="{% url 'new-mail'%}">Add new mail</a>
-<a href="{% url 'job-updates'%}">Share weekly jobs</a>
+<p style="border-bottom: 4px solid red; margin-bottom: 3rem">
+  Welcome to Jarvis Wuod website
+</p>
+<p><a href="{% url 'new-mail'%}">Add new mail</a></p>
+
+<p><a href="{% url 'job-updates'%}">Share weekly jobs</a></p>
 {% endblock body %}

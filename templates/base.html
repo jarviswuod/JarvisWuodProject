@@ -6,6 +6,16 @@
     <title>{% block title %}{% endblock title %}</title>
   </head>
   <body>
-    {% block body %}{% endblock body %}
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 12rem auto;
+      "
+    >
+      {% block body %}{% endblock body %}
+    </div>
   </body>
 </html>
