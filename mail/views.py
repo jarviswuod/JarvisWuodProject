@@ -49,6 +49,7 @@ def weeklyMail(request):
 
     if request.method == 'POST':
         form = EmailContentForm(request.POST)
+        print(form)
 
         if form.is_valid():
             subject = request.POST.get('subject')

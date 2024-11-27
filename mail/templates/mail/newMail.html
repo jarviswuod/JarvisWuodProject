@@ -1,23 +1,64 @@
 {% extends "base.html" %}
-<div></div>
 
+<div></div>
 {% block title %}New Mail - Jarvis Wuod{% endblock title %}
 <div></div>
 
-{% block body %}
-<p style="border-bottom: 4px solid red; margin-bottom: 3rem">New mail form</p>
+<div>
+  {% block body %}
+  <p class="mb-6 text-3xl font-semibold">New Mail Form</p>
 
-<form
-  action=""
-  method="post"
-  style="display: flex; flex-direction: column; align-items: start"
->
-  {% csrf_token %} {{form}}
+  <form action="" method="post" class="flex flex-col gap-6 text-lg w-full">
+    {% csrf_token %}
 
-  <input
-    style="background: green; color: white; font-size: 1.4rem"
-    type="submit"
-    value="Send"
-  />
-</form>
-{% endblock body %}
+    <div class="flex flex-col gap-2">
+      <label for="id_first_name">First Name:</label>
+      <input
+        class="p-1 px-4 border-2"
+        type="text"
+        name="first_name"
+        required
+        id="id_first_name"
+      />
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label for="id_last_name">Last Name:</label>
+      <input
+        class="p-1 px-4 border-2"
+        type="text"
+        name="last_name"
+        required
+        id="id_last_name"
+      />
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label for="id_email">Email:</label>
+      <input
+        class="p-1 px-4 border-2"
+        type="email"
+        name="email"
+        required
+        id="id_email"
+      />
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <label for="id_mail_body_field">Message:</label>
+      <textarea
+        class="p-1 px-4 border-2 h-[48vh]"
+        name="mail_body_field"
+        required
+        id="id_mail_body_field"
+      ></textarea>
+    </div>
+
+    <input
+      class="bg-green-500 text-white hover:bg-green-700 transition-all duration-200 text-xl font-semibold py-3 px-6 mb-4 rounded-lg"
+      type="submit"
+      value="Send"
+    />
+  </form>
+  {% endblock body %}
+</div>

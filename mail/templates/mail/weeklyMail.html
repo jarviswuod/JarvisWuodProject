@@ -3,24 +3,43 @@
 
 {% block title %}Weekly job updates - Jarvis Wuod{% endblock title %}
 <div></div>
+<div>
+  {% block body %}
 
-{% block body %}
+  <p class="mb-6 text-3xl font-semibold">Weekly curated jobs</p>
 
-<p style="border-bottom: 4px solid red; margin-bottom: 3rem">
-  Weekly curated jobs
-</p>
+  <form action="" method="post" class="flex flex-col gap-6 text-lg w-full">
+    {% csrf_token %}
+    <div class="flex flex-col gap-2">
+      <label for="id_subject">Subject:</label>
 
-<form
-  action=""
-  method="post"
-  style="display: flex; flex-direction: column; align-items: start"
->
-  {% csrf_token %} {{form}}
+      <input
+        class="p-1 px-4 border-2"
+        type="text"
+        name="subject"
+        required
+        id="id_subject"
+      />
+    </div>
 
-  <input
-    style="background: green; color: white; font-size: 1.4rem"
-    type="submit"
-    value="Send"
-  />
-</form>
-{% endblock body %}
+    <div class="flex flex-col gap-2">
+      <label for="id_body">Body:</label>
+
+      <textarea
+        class="p-1 px-4 border-2 h-[48vh]"
+        name="body"
+        cols="40"
+        rows="10"
+        required
+        id="id_body"
+      ></textarea>
+    </div>
+
+    <input
+      class="bg-green-500 text-white hover:bg-green-700 transition-all duration-200 text-xl font-semibold py-3 px-6 mb-4 rounded-lg"
+      type="submit"
+      value="Send"
+    />
+  </form>
+  {% endblock body %}
+</div>

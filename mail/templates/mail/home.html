@@ -1,14 +1,20 @@
 {% extends "base.html" %}
 <div></div>
 
-{% block title %}Jarvis Wuod{% endblock title %}
-<div></div>
+{% block title %}Jarvis Wuod{% endblock title %} {% block body %}
 
-{% block body %}
-<p style="border-bottom: 4px solid red; margin-bottom: 3rem">
-  Welcome to Jarvis Wuod website
-</p>
-<p><a href="{% url 'new-mail'%}">Add new mail</a></p>
+<div class="flex flex-col items-center justify-center">
+  <p class="mb-12 text-3xl font-semibold">Welcome to Jarvis Wuod website</p>
+  <button
+    class="bg-green-500 text-white hover:bg-green-700 transition-all duration-200 text-xl font-semibold py-3 px-6 mb-4 rounded-lg"
+  >
+    <a href="{% url 'new-mail'%}">Add new mail</a>
+  </button>
 
-<p><a href="{% url 'job-updates'%}">Share weekly jobs</a></p>
-{% endblock body %}
+  <button
+    class="bg-green-500 text-white hover:bg-green-700 transition-all duration-200 text-xl font-semibold py-3 px-6 mb-4 rounded-lg"
+  >
+    <a href="{% url 'job-updates'%}">Share weekly jobs</a>
+  </button>
+  {% endblock body %}
+</div>
